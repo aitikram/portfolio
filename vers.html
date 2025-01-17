@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projet Magazine</title>
+  <style>
+    /* Style global */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #121212; /* Noir */
+      color: #ffffff; /* Texte en blanc */
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #1C1C1C;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo-container {
+      display: flex;
+      align-items: center;
+    }
+    .logo {
+    width: 80px; /* Largeur du logo */
+    height: auto; /* Conserver les proportions */
+    border-radius: 10px; /* Optionnel : coins arrondis */
+    transition: transform 0.3s ease; /* Animation de survol */
+    margin-left: 50px;
+}
+
+    nav .logo:hover {
+      transform: scale(1.1); /* Agrandir légèrement le logo au survol */
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #F5C6CE;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #C83E6C;
+    }
+
+    /* Titre principal */
+    .main-title {
+      text-align: center;
+      font-size: 3rem;
+      margin: 20px 0;
+      color: #ff4dbf; /* Rose vif */
+      font-weight: bold; /* Texte en gras */
+      position: relative;
+      z-index: 10;
+      animation: fade-in 1s ease-in-out; /* Animation du titre */
+    }
+
+    /* Cercles décoratifs */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.3;
+      z-index: 1;
+    }
+
+    .circle-small {
+      width: 150px;
+      height: 150px;
+      background: linear-gradient(45deg, #ff4dbf, #ffd700);
+      top: 10%;
+      left: 20%;
+      animation: move-circle 3s infinite alternate ease-in-out;
+    }
+
+    .circle-large {
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(45deg, #ff4dbf, #4d79ff);
+      bottom: -50px;
+      right: -50px;
+      animation: move-circle-large 3s infinite alternate ease-in-out;
+    }
+
+    /* Section projet */
+    .project-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 60vh;
+      padding: 0 5%;
+      position: relative;
+      z-index: 5;
+      margin-bottom: 40px; /* Espace en bas */
+      animation: fade-in 1s ease-in-out; /* Animation de la section */
+    }
+
+    /* Bloc image */
+    .project-image {
+      width: 100%;
+      max-width: 300px; /* Limite de la largeur de l'image */
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      margin: 0 20px; /* Espacement horizontal */
+      margin-bottom: -50px;
+    }
+
+    /* Bloc détails */
+    .project-details {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+      margin: 0 20px; /* Espacement horizontal */
+      animation: cinema-curtains-gallery 1s ease-in-out; /* Animation rideau */
+    }
+
+    .project-details h2 {
+      color: #ff4dbf;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      font-weight: bold; /* Texte en gras */
+    }
+    .project-details p strong {
+    color: #ff4dbf; /* Couleur rose vif pour les titres des sections */
+    font-weight: bold; /* Mise en gras des titres */
+}
+
+.project-details p {
+    color: #f5c6ce; /* Couleur claire pour le texte des détails */
+    font-size: 1rem; 
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+    .project-details p {
+      font-size: 1rem;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+    .carrousel-container {
+      position: relative;
+      max-width: 820px; /* Largeur maximum du carrousel pour inclure les marges */
+      margin: 50px auto; /* Centrer le carrousel */
+      overflow: hidden; /* Cacher les débordements */
+    }
+
+    .carrousel {
+      display: flex;
+      transition: transform 0.5s ease;
+      width: calc(200px * 20); /* Ajuste la largeur pour afficher toutes les images */
+    }
+
+    .carrousel img {
+      width: 200px; /* Largeur fixe pour chaque image */
+      height: auto; /* Hauteur automatique pour garder les proportions */
+      border-radius: 10px;
+      margin: 0 10px; /* Espace entre les images */
+    }
+
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.8);
+      border: none;
+      cursor: pointer;
+      font-size: 24px;
+      padding: 10px;
+      border-radius: 5px;
+      z-index: 1; /* Assurer que les boutons sont au-dessus des images */
+    }
+
+    .prev {
+      left: 10px;
+    }
+
+    .next {
+      right: 10px;
+    }
+    /* Animations */
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes move-circle {
+      to {
+        transform: translate(30px, -30px) rotate(15deg);
+      }
+    }
+
+    @keyframes move-circle-large {
+      to {
+        transform: translate(-50px, 50px) rotate(-20deg);
+      }
+    }
+
+    /* Animation "rideaux de cinéma" pour la galerie */
+    @keyframes cinema-curtains-gallery {
+      0% {
+        transform: scaleY(0);
+        opacity: 0.5;
+      }
+      50% {
+        transform: scaleY(1);
+        opacity: 0.7;
+      }
+      100% {
+        transform: scaleY(1);
+        opacity: 1;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <div class="logo-container">
+      <a href="index.html" class="logo-link">
+        <img src="image-removebg-preview (1).png" alt="Logo de ton site" class="logo">
+      </a>
+    </div>
+    <ul>
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Section Projet -->
+  <div class="project-section">
+    <img class="project-image" src="vers3.jpg" alt="Projet Magazine sur InDesign">
+    <div class="project-details">
+    
+      <p><strong>Type de projet :</strong> Création d’un magazine écologique sur InDesign</p>
+      <p><strong>Date :</strong> Novembre 2024</p>
+      <p><strong>Logiciels utilisés :</strong> Adobe InDesign, Photoshop</p>
+      <p><strong>À propos :</strong> J’ai conçu un magazine qui met en valeur des solutions écologiques innovantes. Mon rôle a été de gérer toute la partie graphique et la mise en page.</p>
+    </div>
+  </div>
+
+  <!-- Galerie Photos -->
+  <div class="carrousel-container">
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <div class="carrousel">
+      <!-- Ajouter toutes les 20 images -->
+      <img src="Magazine_AITYAHIA_Ikram_page-0001.jpg" alt="Page 1">
+      <img src="Magazine_AITYAHIA_Ikram_page-0002.jpg" alt="Page 2">
+      <img src="Magazine_AITYAHIA_Ikram_page-0003.jpg" alt="Page 3">
+      <img src="Magazine_AITYAHIA_Ikram_page-0004.jpg" alt="Page 4">
+      <img src="Magazine_AITYAHIA_Ikram_page-0005.jpg" alt="Page 5">
+      <img src="Magazine_AITYAHIA_Ikram_page-0006.jpg" alt="Page 6">
+      <img src="Magazine_AITYAHIA_Ikram_page-0007.jpg" alt="Page 7">
+      <img src="Magazine_AITYAHIA_Ikram_page-0008.jpg" alt="Page 8">
+      <img src="Magazine_AITYAHIA_Ikram_page-0009.jpg" alt="Page 9">
+      <img src="Magazine_AITYAHIA_Ikram_page-0010.jpg" alt="Page 10">
+      <img src="Magazine_AITYAHIA_Ikram_page-0011.jpg" alt="Page 11">
+      <img src="Magazine_AITYAHIA_Ikram_page-0012.jpg" alt="Page 12">
+      <img src="Magazine_AITYAHIA_Ikram_page-0013.jpg" alt="Page 13">
+      <img src="Magazine_AITYAHIA_Ikram_page-0014.jpg" alt="Page 14">
+      <img src="Magazine_AITYAHIA_Ikram_page-0015.jpg" alt="Page 15">
+      <img src="Magazine_AITYAHIA_Ikram_page-0016.jpg" alt="Page 16">
+      <img src="Magazine_AITYAHIA_Ikram_page-0017.jpg" alt="Page 17">
+      <img src="Magazine_AITYAHIA_Ikram_page-0018.jpg" alt="Page 18">
+      <img src="Magazine_AITYAHIA_Ikram_page-0019.jpg" alt="Page 19">
+      <img src="Magazine_AITYAHIA_Ikram_page-0020.jpg" alt="Page 20">
+    </div>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+  </div>
+
+  <script>
+    let currentIndex = 0;
+
+    function showSlides() {
+      const slides = document.querySelectorAll('.carrousel img');
+      const totalSlides = slides.length;
+
+      // Calcule le décalage pour afficher 2 images par ligne
+      const offset = currentIndex * -420; // 400px (largeur) + 20px (marge)
+
+      // Applique le décalage au carrousel
+      document.querySelector('.carrousel').style.transform = `translateX(${offset}px)`;
+    }
+
+    function moveSlide(n) {
+      const slides = document.querySelectorAll('.carrousel img');
+      const totalSlides = slides.length;
+
+      currentIndex += n;
+
+      // Empêche de dépasser les limites
+      if (currentIndex < 0) {
+        currentIndex = 0; // Ne pas dépasser la première image
+      } else if (currentIndex * 2 >= totalSlides) {
+        currentIndex = Math.ceil(totalSlides / 2) - 1; // Ajuste à la dernière paire
+      }
+
+      showSlides();
+    }
+
+    // Initialiser le carrousel
+    showSlides();
+  </script>
+</body>
+</html>

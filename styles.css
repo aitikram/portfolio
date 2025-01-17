@@ -346,10 +346,30 @@ nav ul li a:hover {
     align-items: flex-start; /* Les éléments ne s'aligneront pas à la même hauteur */
     gap: 20px; /* Espacement entre les blocs */
   }
+  .projects h2 {
+    font-size: 28px;
+    
+}
+.tools-used h2 {
+    font-size: 28px;
+
+}
+/* Espacement uniforme pour les sections */
+.tools-used, .projects {
+    margin-bottom: 50px; /* Espacement entre les sections */
+}
+
+/* Espacement entre les titres et leurs contenus */
+.tools-used h2, .projects h2 {
+    margin-bottom: -30px; /* Espacement sous le titre */
+}
+
+/* Ajustement entre les contenus spécifiques (ex : outils et boutons de filtre) */
+.tool-list, .filter-buttons {
+    margin-top: 20px; /* Espacement entre le titre et le contenu */
+}
   
-  .project-block {
-    flex: 0 1 auto; /* La taille du bloc dépend de son contenu */
-  }
+  
   .project-filters {
     display: flex;
     justify-content: center; /* Centre les boutons */
@@ -422,20 +442,7 @@ nav ul li a:hover {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-/* Ajout d'un overlay au survol */
-.project-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(200, 62, 108, 0.5); /* Ombre rose en fond avec transparence */
-    border-radius: 10px;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    z-index: 1;
-}
+
 
 /* Afficher l'overlay au survol */
 .project-card:hover::before {
@@ -479,21 +486,6 @@ nav ul li a:hover {
     text-decoration: underline;
 }
 
-/* Affichage des projets par catégorie (initialement caché) */
-.project-card.communication,
-.project-card.graphisme,
-.project-card.webdesign,
-.project-card.photographie {
-    display: none; /* Cache tous les projets par défaut */
-}
-
-/* Affichage des projets de la catégorie sélectionnée */
-.project-card.communication.show,
-.project-card.graphisme.show,
-.project-card.webdesign.show,
-.project-card.photographie.show {
-    display: block;
-}
 
 
 
