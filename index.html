@@ -21,7 +21,7 @@
             <li><a href="#accueil">Accueil</a></li>
 <li><a href="#portfolio">Portfolio</a></li>
 <li><a href="#apropos">À propos</a></li>
-<li><a href="#contact">Contacts</a></li>
+<li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -31,11 +31,13 @@
         <section class="hero-section">
           <div class="container">
               <div class="hero-text">
-                  <h1><span class="highlight">GRAPHIC & WEB DESIGNER</span></h1>
-                  <h2>Passionate about Web Design and Creativity.</h2>
+                  <h1><span class="highlight"></span>
+                    GRAPHIC &<br>
+                    WEB DESIGNER</span></h1>
+                  <h2>Là où la créativité rencontre l'innovation.</h2>
                   <div class="hero-buttons">
                       <a href="#contact" class="btn btn-primary">Me contacter</a>
-                      <a href="#projects" class="btn btn-secondary">Mes projets</a>
+                      <a href="#portfolio" class="btn btn-secondary">Mes projets</a>
                   </div>
               </div>
               <div class="hero-image">
@@ -58,13 +60,11 @@
       <div class="about-text">
         <h2>À propos de moi</h2>
         <p>
-            Passionnée par le design graphique et les nouvelles tendances
-            visuelles, je suis à la recherche d’une opportunité de stage de
-            3 mois dans le cadre de ma formation en BUT MMI. Je souhaite
-            mettre en pratique mes connaissances en conception visuelle
-            et développer mes compétences techniques et créatives au sein
-            d’une entreprise dynamique et innovante.
-            
+            Je suis Ikram Ait Yahia, étudiante en deuxième année de BUT MMI, spécialisé en création numérique. Passionné par le design graphique et le motion design, je possède également des compétences solides en développement web et en UX design.
+
+Je recherche un stage de 3 mois à partir de début avril pour mettre en pratique mes connaissances et développer mes compétences.
+
+
         </p>
       </div>
     </div>
@@ -136,7 +136,7 @@
         <div class="project-grid">
             <!-- Projets Développement -->
             <div class="project-card developpement">
-                <a href="site-web.html">
+                <a href="html" class="logo-link">
                     <img src="site.png" alt="Concevoir un site web">
                     <div class="project-info">
                         <h3>Concevoir un site web</h3>
@@ -178,7 +178,7 @@
            
             <div class="project-card ux-design">
                 <a href="site-depannage.html">
-                    <img src="depannage.png" alt="Conception d'un site de dépannage">
+                    <img src="dep.png" alt="Conception d'un site de dépannage">
                     <div class="project-info">
                         <h3>Conception d'un site de dépannage</h3>
                         <p>Un projet orienté vers les services de dépannage.</p>
@@ -206,24 +206,6 @@
                 </a>
             </div>
             <div class="project-card infographie">
-                <a href="vers-solidaires.html">
-                    <img src="bibimbap.png" alt="Affiche pour Les Vers Solidaires">
-                    <div class="project-info">
-                        <h3>Affiche pour Les Vers Solidaires</h3>
-                        <p>Une affiche pour un festival écologique.</p>
-                    </div>
-                </a>
-            </div>
-            <div class="project-card infographie">
-                <a href="picto-cochon-renard.html">
-                    <img src="pict.png" alt="Picto pour Le cochon et le renard">
-                    <div class="project-info">
-                        <h3>Picto pour Le cochon et le renard</h3>
-                        <p>Un pictogramme pour une animation amusante.</p>
-                    </div>
-                </a>
-            </div>
-            <div class="project-card infographie">
                 <a href="monogramme.html">
                     <img src="ikram.png" alt="Charte graphique Monogramme">
                     <div class="project-info">
@@ -233,7 +215,34 @@
                 </a>
         
             </div>
-       
+            
+            <div class="project-card infographie">
+                <a href="ff.html">
+                    <img src="pict.png" alt="Picto pour Le cochon et le renard">
+                    <div class="project-info">
+                        <h3>Picto pour Le cochon et le renard</h3>
+                        <p>Un pictogramme pour une animation amusante.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="project-card infographie">
+                <a href="affiche.html">
+                    <img src="Affiche.jpg" alt="Affiche pour Les Vers Solidaires">
+                    <div class="project-info">
+                        <h3>Affiche pour Les Vers Solidaires</h3>
+                        <p>Une affiche pour un festival écologique.</p>
+                    </div>
+                </a>
+            </div>
+            <div class="project-card infographie">
+                <a href="vers.html">
+                    <img src="vers3.jpg" alt="Affiche pour Les Vers Solidaires">
+                    <div class="project-info">
+                        <h3>Affiche pour Les Vers Solidaires</h3>
+                        <p>Une affiche pour un festival écologique.</p>
+                    </div>
+                </a>
+            </div>
 
   </section>
   
@@ -330,6 +339,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 observer.observe(contactSection);
+projectCards.forEach(card => {
+    card.addEventListener('click', () => {
+        console.log('Card clicked'); // Ajouter ceci
+        window.location.href = 'projet.html'; // Si tu veux que le clic sur la carte redirige
+    });
+});
+document.querySelectorAll('.project-card a').forEach(link => {
+    link.addEventListener('click', (event) => {
+        console.log('Link clicked:', link.href); // Affiche l'URL dans la console
+    });
+});
+const projectCards = document.querySelectorAll('.project-card');
+
+projectCards.forEach(card => {
+    card.addEventListener('click', (e) => {
+        const newUrl = card.getAttribute('data-url'); // Récupérer la valeur de data-url
+        window.history.pushState(null, '', newUrl);  // Changer l'URL sans recharger la page
+        // Tu peux aussi ajouter ici un système pour afficher plus d'informations sur le projet
+    });
+});
 
         </script>
   
