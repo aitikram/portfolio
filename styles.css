@@ -175,7 +175,7 @@ body {
         transform: translateX(-100%);
     }
 }
-
+@media (max-width: 767px) { .container { padding: 10px; } .row { flex-direction: column; /* Empile les colonnes sur mobile */ } .col { flex: none; width: 100%; /* Prend toute la largeur */ padding: 5px; } .hero-text h1 { font-size: 2rem; /* Réduit la taille du texte sur mobile */ } .hero-text h2 { font-size: 1.5rem; } .hero-text p { font-size: 0.9rem; } .hero-buttons .btn { width: 100%; /* Les boutons prennent toute la largeur */ font-size: 14px; } .logo { width: 60px; /* Réduit la taille du logo sur mobile */ } .about-image img { width: 100%; /* L'image prend toute la largeur */ margin-left: 0; } nav { flex-direction: column; /* Navigation en colonne sur mobile */ } nav ul { flex-direction: column; /* Liste verticale des liens de navigation */ gap: 10px; } .project-grid { grid-template-columns: 1fr; /* 1 projet par ligne sur mobile */ } .tools { flex-direction: column; /* Les outils en colonne sur mobile */ align-items: center; } .tool { width: 100%; /* Les outils prennent toute la largeur */ margin-bottom: 10px; } }
 /* Navbar */
 nav {
     display: flex;
