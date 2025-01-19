@@ -216,19 +216,93 @@ nav ul li a:hover {
 @media (max-width: 1024px) {
   /* Navbar (header) */
   header {
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-  }
-
-  header ul {
-    display: block;
+    position: relative; /* Changer de fixed à relative */
+    background-color: #f8f8f8; /* Couleur de fond du header */
+    padding: 40px 20px; /* Augmenter le padding pour un header plus grand */
     text-align: center;
-  }
+    z-index: 1000; /* Assure que le header reste au-dessus des autres éléments */
+}
 
-  header ul li {
-    margin-bottom: 10px;
-  }
+
+/* Conteneur du logo */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Logo */
+/* Logo */
+.logo {
+    width: 80px; /* Réduire la taille du logo */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Style global du menu */
+nav {
+    display: flex;
+    justify-content: space-between; /* Sépare le logo à gauche et le menu à droite */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1C1C1C;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Menu de navigation */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+/* Style des éléments du menu */
+nav ul li {
+    white-space: nowrap; /* Empêche le texte de se couper */
+}
+
+nav ul li a {
+    color: #F5C6CE;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #C83E6C;
+}
+
+/* Version pour les écrans larges (ordinateurs) */
+@media (min-width: 768px) {
+    nav {
+        justify-content: space-between; /* Logo à gauche et menu à droite */
+    }
+
+    nav .logo {
+        margin-right: auto; /* Force le logo à se placer à gauche */
+    }
+
+    nav ul {
+        margin-left: auto; /* Décale le menu vers la droite */
+        margin-right: 20px; /* Décale légèrement le menu vers la gauche en ajoutant une marge à droite */
+    }
+}
+
+/* Version mobile (écrans plus petits) */
+@media (max-width: 767px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start; /* Aligne les éléments sur la gauche */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+}
+/* Body */
 
   .project-section {
     flex-direction: column;
