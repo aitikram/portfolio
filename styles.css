@@ -890,3 +890,124 @@ nav ul li a:hover {
         gap: 10px;
     }
 }
+/* Général */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+    width: 100%; /* Prend toute la largeur de l'écran */
+    padding: 20px 5%; /* Ajuste l'espacement des côtés */
+    background: #f5f5f5;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 40px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #007bff;
+}
+
+/* Section Accueil */
+#accueil {
+    width: 100%;
+    padding: 100px 10%;
+    background: #e3e3e3;
+    text-align: center;
+}
+
+#accueil h1 {
+    font-size: 3em;
+    color: #333;
+}
+
+#accueil p {
+    font-size: 1.2em;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Section À propos */
+#a-propos {
+    width: 100%;
+    padding: 80px 10%;
+    background: #ffffff;
+    text-align: center;
+}
+
+#a-propos h2 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+#a-propos p {
+    font-size: 1.1em;
+    color: #555;
+    margin-top: 20px;
+}
+
+/* Section Tools */
+#tools {
+    width: 100%;
+    padding: 80px 10%;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+#tools h2 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+#tools p {
+    font-size: 1.1em;
+    color: #555;
+    margin-top: 20px;
+}
+
+/* Section Projets */
+#projets {
+    width: 50%; /* Garde cette section à 50% */
+    margin: 0 auto;
+    padding: 80px 5%;
+    background: #e3e3e3;
+    text-align: center;
+}
+
+#projets h2 {
+    font-size: 2.5em;
+    color: #333;
+}
+
+#projets p {
+    font-size: 1.1em;
+    color: #555;
+    margin-top: 20px;
+}
