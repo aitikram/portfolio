@@ -6,10 +6,13 @@
 }
 /* Section de l'en-tête avec logo */
 header {
-    background-color: #1C1C1C; /* Couleur de fond de l'en-tête */
-    padding: 20px;
+    position: relative; /* Changer de fixed à relative */
+    background-color: #f8f8f8; /* Couleur de fond du header */
+    padding: 40px 20px; /* Augmenter le padding pour un header plus grand */
     text-align: center;
+    z-index: 1000; /* Assure que le header reste au-dessus des autres éléments */
 }
+
 
 /* Conteneur du logo */
 .logo-container {
@@ -19,34 +22,76 @@ header {
 }
 
 /* Logo */
+/* Logo */
 .logo {
-    width: 80px; /* Largeur du logo */
-    height: auto; /* Conserver les proportions */
-    border-radius: 10px; /* Coins arrondis */
-    transition: transform 0.3s ease; /* Animation de survol */
+    width: 80px; /* Réduire la taille du logo */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
 }
 
-/* Version ordinateur */
-@media (min-width: 769px) {
-    .logo {
-        position: absolute; /* Position absolue pour placement précis */
-        left: 0; /* Alignement à l'extrême gauche */
-        margin-left: 0; /* S'assurer qu'il n'y a pas de marge */
+/* Style global du menu */
+nav {
+    display: flex;
+    justify-content: space-between; /* Sépare le logo à gauche et le menu à droite */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1C1C1C;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Menu de navigation */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+/* Style des éléments du menu */
+nav ul li {
+    white-space: nowrap; /* Empêche le texte de se couper */
+}
+
+nav ul li a {
+    color: #F5C6CE;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #C83E6C;
+}
+
+/* Version pour les écrans larges (ordinateurs) */
+@media (min-width: 768px) {
+    nav {
+        justify-content: space-between; /* Logo à gauche et menu à droite */
+    }
+
+    nav .logo {
+        margin-right: auto; /* Force le logo à se placer à gauche */
+    }
+
+    nav ul {
+        margin-left: auto; /* Décale le menu vers la droite */
+        margin-right: 20px; /* Décale légèrement le menu vers la gauche en ajoutant une marge à droite */
     }
 }
 
-/* Version mobile */
-@media (max-width: 768px) {
-    .logo {
-        position: static; /* Position normale pour mobile */
-        margin-left: auto; /* Ajustement si besoin */
-        display: block;
+/* Version mobile (écrans plus petits) */
+@media (max-width: 767px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start; /* Aligne les éléments sur la gauche */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
     }
 }
-/* Effet au survol du logo */
-.logo:hover {
-    transform: scale(1.1); /* Agrandir légèrement le logo au survol */
-}hh
 /* Body */
 body {
     font-family: 'Poppins', sans-serif;
