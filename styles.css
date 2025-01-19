@@ -22,15 +22,31 @@ header {
 .logo {
     width: 80px; /* Largeur du logo */
     height: auto; /* Conserver les proportions */
-    border-radius: 10px; /* Optionnel : coins arrondis */
+    border-radius: 10px; /* Coins arrondis */
     transition: transform 0.3s ease; /* Animation de survol */
-    margin-left: 50px;
 }
 
+/* Version ordinateur */
+@media (min-width: 769px) {
+    .logo {
+        position: absolute; /* Position absolue pour placement précis */
+        left: 0; /* Alignement à l'extrême gauche */
+        margin-left: 0; /* S'assurer qu'il n'y a pas de marge */
+    }
+}
+
+/* Version mobile */
+@media (max-width: 768px) {
+    .logo {
+        position: static; /* Position normale pour mobile */
+        margin-left: auto; /* Ajustement si besoin */
+        display: block;
+    }
+}
 /* Effet au survol du logo */
 .logo:hover {
     transform: scale(1.1); /* Agrandir légèrement le logo au survol */
-}
+}hh
 /* Body */
 body {
     font-family: 'Poppins', sans-serif;
