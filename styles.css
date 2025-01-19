@@ -231,7 +231,113 @@ nav ul li a:hover {
     border: 2px solid #C83E6C; /* Bordeaux */
     margin-left: 15%;
 }
+/* Ajout de styles pour rendre la page responsive */
 
+/* Styles généraux */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+  }
+  
+  /* Conteneur principal */
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px;
+  }
+  
+  /* Sections */
+  section {
+    margin-bottom: 20px;
+  }
+  
+  /* Images */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Grille de mise en page */
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .col {
+    flex: 1;
+    padding: 10px;
+  }
+  
+  /* Boutons */
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Styles spécifiques aux grands écrans */
+  @media (min-width: 992px) {
+    .desktop-only {
+      display: block;
+    }
+    .mobile-only {
+      display: none;
+    }
+  }
+  
+  /* Styles spécifiques aux tablettes */
+  @media (min-width: 768px) and (max-width: 991px) {
+    .tablet-layout {
+      flex-direction: column;
+    }
+  }
+  
+  /* Styles pour mobiles */
+  @media (max-width: 767px) {
+    .desktop-only {
+      display: none;
+    }
+    .mobile-only {
+      display: block;
+    }
+  
+    .container {
+      padding: 10px;
+    }
+  
+    .row {
+      flex-direction: column;
+    }
+  
+    .col {
+      flex: none;
+      width: 100%;
+      padding: 5px;
+    }
+  
+    button {
+      width: 100%;
+      font-size: 14px;
+    }
+  
+    header {
+      text-align: center;
+    }
+  
+    nav {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    nav a {
+      padding: 10px;
+      display: block;
+    }
+  }
+  
 .about-text {
     width: 55%;
 }

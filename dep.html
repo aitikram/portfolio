@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projet Magazine</title>
+  <title>Projet Pictogramme - Renard</title>
   <style>
     /* Style global */
     body {
@@ -115,22 +115,24 @@
     /* Bloc image */
     .project-image {
       width: 100%;
-      max-width: 300px; /* Limite de la largeur de l'image */
+      max-width: 900px; /* Limite de la largeur de l'image */
       border-radius: 15px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
       margin: 0 20px; /* Espacement horizontal */
-      margin-bottom: -50px;
+      margin-bottom: 20px;
     }
 
     /* Bloc détails */
     .project-details {
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-      margin: 0 20px; /* Espacement horizontal */
-      animation: cinema-curtains-gallery 1s ease-in-out; /* Animation rideau */
-    }
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  margin: 0 50px; /* Espacement horizontal */
+  animation: cinema-curtains-gallery 1s ease-in-out; /* Animation rideau */
+  max-height: 250px; /* Hauteur maximale de la boîte */
+  overflow-y: auto; /* Activer le défilement vertical si le contenu dépasse */
+}
 
     .project-details h2 {
       color: #ff4dbf;
@@ -158,22 +160,23 @@
       margin: 30px 0;
       opacity: 0;
       animation: fade-in 2s 1s forwards;
-      margin-top: 100px;
+      margin-top: 10px;
     }
 
     .photo-gallery img {
-      width: 300px;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-      transition: transform 0.3s ease-in-out;
-    }
+  width: 300px;
+  height: 300px;
+  object-fit: contain; /* Affiche toute l'image avec des bordures transparentes si nécessaire */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
+}
 
     .photo-gallery img:hover {
       transform: scale(1.1); /* Légère agrandissement au survol */
       transition: transform 0.3s ease-in-out;
     }
+
 
     /* Animations */
     @keyframes fade-in {
@@ -235,26 +238,25 @@
   <div class="circle circle-large"></div>
 
   <!-- Titre principal -->
-  <h1 class="main-title">Affiche Publicitaire</h1>
+  <h1 class="main-title">ONG-Briser le silence : Site Web</h1>
 
   <!-- Section Projet -->
   <div class="project-section">
-    <img class="project-image" src="vers.png" alt="Affiche Les Vers Solidaires">
+    <img class="project-image" src="téléchargement (23).png" alt="Pictogramme Renard">
     <div class="project-details">
-      <p><strong>Description :</strong>Production d'une affiche pour le festival "Les Vers Solidaires"</p>
-      <p><strong>Contexte :</strong> Au début du deuxième semestre nous devions créer une affiche pour le festival "Les Vers Solidaires" en utilisant le logiciel Adobe Illustrator. L'objectif était de combiner des éléments artistiques et culturels pour représenter l'essence de l'événement.</p>
-      <p><strong>Production :</strong> Individuel</p>
-      <p><strong>Logiciel utilisé(s) :</strong> Adobe Illustrator</p>
-      <p><strong>Compétences :</strong> Infographisme, Transmission d'informations en un visuel attractif</p>
+        <p><strong>Description :</strong> Création des wireframes et des maquettes interactives du site <em>Briser le Silence</em>, une ONG dédiée à la lutte contre la violence domestique. Ce projet vise à offrir une navigation intuitive et des visuels percutants pour sensibiliser et accompagner les victimes.</p>
+        <p><strong>Contexte :</strong> En collaboration avec une collègue, nous avons conçu l'architecture et le design du site en mettant l'accent sur l'accessibilité et l'engagement des utilisateurs. Les maquettes interactives permettent une meilleure visualisation et une préparation optimisée pour le développement.</p>
+        <p><strong>Production :</strong> En binôme</p>
+        <p><strong>Logiciels utilisé(s) :</strong> Figma</p>
+        <p><strong>Compétences :</strong> UX/UI design, création de wireframes, conception de maquettes interactives</p>
     </div>
   </div>
 
   <!-- Galerie Photos -->
   <div class="photo-gallery">
-    <img src="vers1.png" alt="Illustration de l'affiche 1">
-    <img src="vers4.jpg" alt="Illustration de l'affiche 2">
-    <img src="vers5.jpg" alt="Illustration de l'affiche 3">
-    <img src="vers6.jpg" alt="Illustration de l'affiche 4">
+    <img src="ong1.png" alt="Illustration du pictogramme 1">
+    <img src="ong3.jpg" alt="Illustration du pictogramme 2">
+    <img src="ong4.png" alt="Illustration du pictogramme 3">
   </div>
 </body>
 </html>
