@@ -5,70 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projet Magazine</title>
   <style>
-    /* Style global */
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #121212; /* Noir */
-      color: #ffffff; /* Texte en blanc */
-      overflow-x: hidden;
-    }
-
-    /* Navbar */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #1C1C1C;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav .logo-container {
-      display: flex;
-      align-items: center;
-    }
-    .logo {
-    width: 80px; /* Largeur du logo */
-    height: auto; /* Conserver les proportions */
-    border-radius: 10px; /* Optionnel : coins arrondis */
-    transition: transform 0.3s ease; /* Animation de survol */
-    margin-left: 50px;
-}
-
-    nav .logo:hover {
-      transform: scale(1.1); /* Agrandir légèrement le logo au survol */
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-    }
-
-    nav ul li a {
-      color: #F5C6CE;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      color: #C83E6C;
-    }
-
-    /* Titre principal */
-    .main-title {
+        .main-title {
       text-align: center;
-      font-size: 3rem;
-      margin: 20px 0;
-      color: #ff4dbf; /* Rose vif */
-      font-weight: bold; /* Texte en gras */
+      font-size: 2rem; /* Taille réduite du titre */
+      margin: 20px 0 40px; /* Espacement supérieur et inférieur (20px en haut, 40px en bas) */
+      color: #ff4dbf;
+      font-weight: bold;
       position: relative;
       z-index: 10;
-      animation: fade-in 1s ease-in-out; /* Animation du titre */
+      animation: fade-in 1s ease-in-out;
     }
 
     /* Cercles décoratifs */
@@ -136,22 +81,19 @@
       margin-bottom: 15px;
       font-weight: bold; /* Texte en gras */
     }
-    .project-details p strong {
-    color: #ff4dbf; /* Couleur rose vif pour les titres des sections */
-    font-weight: bold; /* Mise en gras des titres */
-}
 
-.project-details p {
-    color: #f5c6ce; /* Couleur claire pour le texte des détails */
-    font-size: 1rem; 
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
+    .project-details p strong {
+      color: #ff4dbf; /* Couleur rose vif pour les titres des sections */
+      font-weight: bold; /* Mise en gras des titres */
+    }
+
     .project-details p {
-      font-size: 1rem;
+      color: #f5c6ce; /* Couleur claire pour le texte des détails */
+      font-size: 1rem; 
       margin-bottom: 10px;
       line-height: 1.6;
     }
+
     .carrousel-container {
       position: relative;
       max-width: 820px; /* Largeur maximum du carrousel pour inclure les marges */
@@ -192,6 +134,7 @@
     .next {
       right: 10px;
     }
+
     /* Animations */
     @keyframes fade-in {
       0% {
@@ -230,33 +173,346 @@
       }
     }
 
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column; /* Changer l'orientation en colonne sur petits écrans */
+        align-items: center;
+      }
+
+      nav ul li {
+        margin: 10px 0; /* Espacement entre les éléments de la navbar */
+      }
+
+      .main-title {
+        font-size: 1.5rem; /* Réduire la taille du titre sur mobile */
+      }
+
+      .project-section {
+        flex-direction: column; /* Aligner les éléments verticalement */
+        height: auto; /* Permettre à la section de s'adapter à son contenu */
+      }
+
+      .project-image {
+        max-width: 100%; /* Laisser l'image prendre toute la largeur sur mobile */
+        margin-bottom: 20px; /* Espacement en bas pour éviter le chevauchement */
+      }
+
+      .carrousel-container {
+        margin: 20px; /* Réduire les marges du carrousel sur mobile */
+      }
+
+      .carrousel {
+        width: auto; /* Ajuster la largeur pour le carrousel */
+      }
+
+      .carrousel img {
+        width: 100px; /* Réduire la largeur des images du carrousel sur mobile */
+      }
+
+      button {
+        font-size: 18px; /* Réduire la taille des boutons sur mobile */
+        padding: 5px; /* Réduire le padding des boutons */
+      }
+    }
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Section de l'en-tête avec logo */
+header {
+    position: relative; /* Changer de fixed à relative */
+    background-color: #f8f8f8; /* Couleur de fond du header */
+    padding: 40px 20px; /* Augmenter le padding pour un header plus grand */
+    text-align: center;
+    z-index: 1000; /* Assure que le header reste au-dessus des autres éléments */
+}
+
+
+/* Conteneur du logo */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Logo */
+/* Logo */
+.logo {
+    width: 80px; /* Réduire la taille du logo */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Style global du menu */
+nav {
+    display: flex;
+    justify-content: space-between; /* Sépare le logo à gauche et le menu à droite */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1C1C1C;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Menu de navigation */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+/* Style des éléments du menu */
+nav ul li {
+    white-space: nowrap; /* Empêche le texte de se couper */
+}
+
+nav ul li a {
+    color: #F5C6CE;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #C83E6C;
+}
+
+/* Version pour les écrans larges (ordinateurs) */
+@media (min-width: 768px) {
+    nav {
+        justify-content: space-between; /* Logo à gauche et menu à droite */
+    }
+
+    nav .logo {
+        margin-right: auto; /* Force le logo à se placer à gauche */
+    }
+
+    nav ul {
+        margin-left: auto; /* Décale le menu vers la droite */
+        margin-right: 20px; /* Décale légèrement le menu vers la gauche en ajoutant une marge à droite */
+    }
+}
+
+/* Version mobile (écrans plus petits) */
+@media (max-width: 767px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start; /* Aligne les éléments sur la gauche */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+}
+/* Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1F1F1F;
+    color: #F5C6CE;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 60px 20px;
+    color: #FFF;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 500px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero-text h1 .highlight {
+    color: #C83E6C; /* Couleur principale */
+}
+
+.hero-text h2 {
+    font-size: 1.8rem;
+    color: #F5C6CE;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1rem;
+    color: #AAA;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-buttons .btn {
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #C83E6C;
+    color: #FFF;
+}
+
+.btn-primary:hover {
+    background-color: #F5C6CE;
+    color: #000;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #C83E6C;
+    border: 2px solid #C83E6C;
+}
+
+.btn-secondary:hover {
+    background-color: #C83E6C;
+    color: #FFF;
+}
+
+/* Hero Image */
+.hero-image img {
+    max-width: 350px;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: float 4s ease-in-out infinite;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+.hero-image img, .about-image img {
+    transition: transform 0.3s ease; /* Transition douce */
+}
+
+.hero-image img:hover, .about-image img:hover {
+    transform: scale(1.05); /* Zoom sur l'image */
+}
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    height: 50%;
+    gap: 20px;
+    z-index: 1;
+}
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Scrolling Text */
+.scrolling-text {
+    margin-top: 40px;
+    padding: 10px 0;
+    background-color: #2E2E2E;
+    color: #F5C6CE;
+    overflow: hidden;
+    position: relative;
+}
+
+.scrolling-wrapper {
+    white-space: nowrap;
+    display: inline-block;
+    animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+@media (max-width: 767px) { .container { padding: 10px; } .row { flex-direction: column; /* Empile les colonnes sur mobile */ } .col { flex: none; width: 100%; /* Prend toute la largeur */ padding: 5px; } .hero-text h1 { font-size: 2rem; /* Réduit la taille du texte sur mobile */ } .hero-text h2 { font-size: 1.5rem; } .hero-text p { font-size: 0.9rem; } .hero-buttons .btn { width: 100%; /* Les boutons prennent toute la largeur */ font-size: 14px; } .logo { width: 60px; /* Réduit la taille du logo sur mobile */ } .about-image img { width: 100%; /* L'image prend toute la largeur */ margin-left: 0; } nav { flex-direction: column; /* Navigation en colonne sur mobile */ } nav ul { flex-direction: column; /* Liste verticale des liens de navigation */ gap: 10px; } .project-grid { grid-template-columns: 1fr; /* 1 projet par ligne sur mobile */ } .tools { flex-direction: column; /* Les outils en colonne sur mobile */ align-items: center; } .tool { width: 100%; /* Les outils prennent toute la largeur */ margin-bottom: 10px; } }
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1C1C1C;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: #C83E6C;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #F5C6CE;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #C83E6C;
+}
   </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav>
     <div class="logo-container">
-      <a href="index.html" class="logo-link">
-        <img src="image-removebg-preview (1).png" alt="Logo de ton site" class="logo">
-      </a>
+        <a href="index.html" class="logo-link">
+            <img src="image-removebg-preview (1).png" alt="Logo de ton site" class="logo">
+        </a>
     </div>
     <ul>
-      <li><a href="#accueil">Accueil</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#apropos">À propos</a></li>
-      <li><a href="#contact">Contact</a></li>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#apropos">À propos</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#contact">Contact</a></li>
     </ul>
-  </nav>
-
+</nav>
+  <h1 class="main-title">Magazine</h1>
   <!-- Section Projet -->
   <div class="project-section">
     <img class="project-image" src="vers3.jpg" alt="Projet Magazine sur InDesign">
     <div class="project-details">
     
-      <p><strong>Type de projet :</strong> Création d’un magazine écologique sur InDesign</p>
-      <p><strong>Date :</strong> Novembre 2024</p>
-      <p><strong>Logiciels utilisés :</strong> Adobe InDesign, Photoshop</p>
-      <p><strong>À propos :</strong> J’ai conçu un magazine qui met en valeur des solutions écologiques innovantes. Mon rôle a été de gérer toute la partie graphique et la mise en page.</p>
+      <p><strong>Description :</strong> Création d'un magazine à partir d'un concept créatif. Le projet inclut la conception de la couverture, des pages internes, et l'intégration d'illustrations et de typographies modernes.</p>
+      <p><strong>Contexte :</strong> Projet académique. Le but est de mettre en avant la créativité dans la mise en page et la typographie, avec un focus particulier sur les tendances visuelles actuelles.</p>
+      <p><strong>Production :</strong> Individuel</p>
+      <p><strong>Logiciel utilisé(s) :</strong> Adobe InDesign, Illustrator, Photoshop</p>
+      <p><strong>Compétences :</strong> Conception de mise en page, Création graphique, Illustration, Typographie moderne</p>
     </div>
   </div>
 
