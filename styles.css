@@ -674,7 +674,19 @@ nav ul li a:hover {
 .project-card a:hover {
     text-decoration: underline;
 }
+@media (max-width: 768px) {
+    .project-filters {
+        flex-wrap: wrap; /* Permet aux boutons de revenir à la ligne */
+        gap: 10px; /* Espacement entre les boutons */
+        justify-content: center; /* Centrer les boutons */
+    }
 
+    .filter-btn {
+        width: calc(100% - 20px); /* Boutons presque pleine largeur sur mobile */
+        font-size: 14px; /* Réduction de la taille du texte */
+        padding: 12px; /* Espacement suffisant pour le confort sur mobile */
+    }
+}
 
 
 
