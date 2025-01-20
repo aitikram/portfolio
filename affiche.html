@@ -157,7 +157,7 @@ nav ul li a:hover {
         font-weight: bold; /* Rendre les liens en gras */
         text-decoration: none; /* Supprimer toute ligne sous les liens */
     }
-}
+
 
 /* Body */
 body {
@@ -423,6 +423,28 @@ body {
     font-size: 1.1rem;
     margin: 10px 0;
   }
+}
+@media (max-width: 767px) {
+    .gallery {
+        display: flex; /* Utilise Flexbox pour gérer l'agencement */
+        flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
+        justify-content: center; /* Centre les images horizontalement */
+        gap: 10px; /* Ajoute de l'espace entre les images */
+    }
+
+    .gallery-item {
+        display: flex;
+        justify-content: center; /* Centre les images dans leur conteneur */
+        align-items: center; /* Centre les images verticalement si leur conteneur a une hauteur fixe */
+        width: 100%; /* Assurez-vous que le conteneur de chaque image occupe toute la largeur */
+        max-width: 300px; /* Facultatif : Limite la largeur d'une image sur mobile */
+        margin: 0 auto; /* Centre chaque image dans son conteneur */
+    }
+
+    .gallery img {
+        width: 100%; /* Les images occupent toute la largeur de leur conteneur */
+        height: auto; /* Maintient les proportions des images */
+    }
 }
 
     /* Animations */
