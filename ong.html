@@ -230,21 +230,295 @@
         display: none; /* Masquer les cercles sur mobile */
       }
     }
+    /* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Section de l'en-tête avec logo */
+header {
+    position: relative; /* Changer de fixed à relative */
+    background-color: #f8f8f8; /* Couleur de fond du header */
+    padding: 40px 20px; /* Augmenter le padding pour un header plus grand */
+    text-align: center;
+    z-index: 1000; /* Assure que le header reste au-dessus des autres éléments */
+}
+
+
+/* Conteneur du logo */
+.logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Logo */
+/* Logo */
+.logo {
+    width: 80px; /* Réduire la taille du logo */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Style global du menu */
+nav {
+    display: flex;
+    justify-content: space-between; /* Sépare le logo à gauche et le menu à droite */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1C1C1C;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Menu de navigation */
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+/* Style des éléments du menu */
+nav ul li {
+    white-space: nowrap; /* Empêche le texte de se couper */
+}
+
+nav ul li a {
+    color: #F5C6CE;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #C83E6C;
+}
+
+/* Version pour les écrans larges (ordinateurs) */
+@media (min-width: 768px) {
+    nav {
+        justify-content: space-between; /* Logo à gauche et menu à droite */
+    }
+
+    nav .logo {
+        margin-right: auto; /* Force le logo à se placer à gauche */
+    }
+
+    nav ul {
+        margin-left: auto; /* Décale le menu vers la droite */
+        margin-right: 20px; /* Décale légèrement le menu vers la gauche en ajoutant une marge à droite */
+    }
+}
+
+/* Version mobile (écrans plus petits) */
+@media (max-width: 767px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start; /* Aligne les éléments sur la gauche */
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+}
+/* Body */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #1F1F1F;
+    color: #F5C6CE;
+    overflow-x: hidden;
+}
+
+/* Hero Section */
+.hero-section {
+    padding: 60px 20px;
+    color: #FFF;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 500px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.hero-text h1 .highlight {
+    color: #C83E6C; /* Couleur principale */
+}
+
+.hero-text h2 {
+    font-size: 1.8rem;
+    color: #F5C6CE;
+    margin-bottom: 20px;
+}
+
+.hero-text p {
+    font-size: 1rem;
+    color: #AAA;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-buttons .btn {
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #C83E6C;
+    color: #FFF;
+}
+
+.btn-primary:hover {
+    background-color: #F5C6CE;
+    color: #000;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: #C83E6C;
+    border: 2px solid #C83E6C;
+}
+
+.btn-secondary:hover {
+    background-color: #C83E6C;
+    color: #FFF;
+}
+
+/* Hero Image */
+.hero-image img {
+    max-width: 350px;
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: float 4s ease-in-out infinite;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+.hero-image img, .about-image img {
+    transition: transform 0.3s ease; /* Transition douce */
+}
+
+.hero-image img:hover, .about-image img:hover {
+    transform: scale(1.05); /* Zoom sur l'image */
+}
+.hero-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    width: 100%;
+    height: 50%;
+    gap: 20px;
+    z-index: 1;
+}
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* Scrolling Text */
+.scrolling-text {
+    margin-top: 40px;
+    padding: 10px 0;
+    background-color: #2E2E2E;
+    color: #F5C6CE;
+    overflow: hidden;
+    position: relative;
+}
+
+.scrolling-wrapper {
+    white-space: nowrap;
+    display: inline-block;
+    animation: scroll 10s linear infinite;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+@media (max-width: 767px) { .container { padding: 10px; } .row { flex-direction: column; /* Empile les colonnes sur mobile */ } .col { flex: none; width: 100%; /* Prend toute la largeur */ padding: 5px; } .hero-text h1 { font-size: 2rem; /* Réduit la taille du texte sur mobile */ } .hero-text h2 { font-size: 1.5rem; } .hero-text p { font-size: 0.9rem; } .hero-buttons .btn { width: 100%; /* Les boutons prennent toute la largeur */ font-size: 14px; } .logo { width: 60px; /* Réduit la taille du logo sur mobile */ } .about-image img { width: 100%; /* L'image prend toute la largeur */ margin-left: 0; } nav { flex-direction: column; /* Navigation en colonne sur mobile */ } nav ul { flex-direction: column; /* Liste verticale des liens de navigation */ gap: 10px; } .project-grid { grid-template-columns: 1fr; /* 1 projet par ligne sur mobile */ } .tools { flex-direction: column; /* Les outils en colonne sur mobile */ align-items: center; } .tool { width: 100%; /* Les outils prennent toute la largeur */ margin-bottom: 10px; } }
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1C1C1C;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: #C83E6C;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #F5C6CE;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #C83E6C;
+}
+
   </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav>
     <div class="logo-container">
-      <img class="logo" src="logo.png" alt="Logo ONG">
+        <a href="index.html" class="logo-link">
+            <img src="image-removebg-preview (1).png" alt="Logo de ton site" class="logo">
+        </a>
     </div>
     <ul>
-      <li><a href="#accueil">Accueil</a></li>
-      <li><a href="#projets">Projets</a></li>
-      <li><a href="#galerie">Galerie</a></li>
-      <li><a href="#contact">Contact</a></li>
+        <li><a href="#accueil">Accueil</a></li>
+        <li><a href="#apropos">À propos</a></li>
+<li><a href="#portfolio">Portfolio</a></li>
+<li><a href="#contact">Contact</a></li>
     </ul>
-  </nav>
+</nav>
 
   <!-- Cercles décoratifs -->
   <div class="circle circle-small"></div>
