@@ -84,31 +84,7 @@ nav ul li a:hover {
     }
 }
 
-/* Version mobile (écrans plus petits) */
-@media (max-width: 767px) {
-    nav {
-        flex-direction: column;
-        align-items: flex-start; /* Aligne les éléments sur la gauche */
-    }
 
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-        align-items: flex-start;
-    }
-}
-/* Menu de navigation */
-nav ul li a {
-    color: #F5C6CE;
-    transition: color 0.3s ease;
-    font-weight: bold; /* Rendre les liens en gras */
-    text-decoration: none; /* Supprimer le soulignement sous les liens */
-}
-
-/* Hover des liens */
-nav ul li a:hover {
-    color: #C83E6C;
-}
 
 /* Version pour les écrans larges (ordinateurs) */
 @media (min-width: 768px) {
@@ -134,7 +110,7 @@ nav ul li a:hover {
 
 /* Version mobile (écrans plus petits) */
 @media (max-width: 767px) {
-  nav {
+     nav {
         flex-direction: column; /* Disposition en colonne pour les petits écrans */
         align-items: center; /* Centrer les éléments du menu et le logo */
         padding: 20px; /* Ajoutez un padding pour éviter que le contenu soit trop collé */
@@ -423,28 +399,6 @@ body {
     font-size: 1.1rem;
     margin: 10px 0;
   }
-}
-@media (max-width: 767px) {
-    .gallery {
-        display: flex; /* Utilise Flexbox pour gérer l'agencement */
-        flex-wrap: wrap; /* Permet aux éléments de passer à la ligne si nécessaire */
-        justify-content: center; /* Centre les images horizontalement */
-        gap: 10px; /* Ajoute de l'espace entre les images */
-    }
-
-    .gallery-item {
-        display: flex;
-        justify-content: center; /* Centre les images dans leur conteneur */
-        align-items: center; /* Centre les images verticalement si leur conteneur a une hauteur fixe */
-        width: 100%; /* Assurez-vous que le conteneur de chaque image occupe toute la largeur */
-        max-width: 300px; /* Facultatif : Limite la largeur d'une image sur mobile */
-        margin: 0 auto; /* Centre chaque image dans son conteneur */
-    }
-
-    .gallery img {
-        width: 100%; /* Les images occupent toute la largeur de leur conteneur */
-        height: auto; /* Maintient les proportions des images */
-    }
 }
 
     /* Animations */
