@@ -10,7 +10,8 @@
   <style>
     /* Style global */
 
-    header {
+/* Body */
+header {
     position: relative; /* Changer de fixed à relative */
     background-color: #f8f8f8; /* Couleur de fond du header */
     padding: 40px 20px; /* Augmenter le padding pour un header plus grand */
@@ -745,20 +746,7 @@ nav ul li a:hover {
         transform: translateX(-100%);
     }
 }
-@media (max-width: 767px) { .container { padding: 10px; } .row { flex-direction: column; /* Empile les colonnes sur mobile */ } .col { flex: none; width: 100%; /* Prend toute la largeur */ padding: 5px; } .hero-text h1 { font-size: 2rem; /* Réduit la taille du texte sur mobile */ } .hero-text h2 { font-size: 1.5rem; } .hero-text p { font-size: 0.9rem; } .hero-buttons .btn { width: 100%; /* Les boutons prennent toute la largeur */ font-size: 14px; } .logo { width: 60px; /* Réduit la taille du logo sur mobile */ } .about-image img { width: 100%; /* L'image prend toute la largeur */ margin-left: 0; } nav { flex-direction: column; /* Navigation en colonne sur mobile */ } nav ul { flex-direction: column; /* Liste verticale des liens de navigation */ gap: 10px; } .project-grid { grid-template-columns: 1fr; /* 1 projet par ligne sur mobile */ } .tools { flex-direction: column; /* Les outils en colonne sur mobile */ align-items: center; } .tool { width: 100%; /* Les outils prennent toute la largeur */ margin-bottom: 10px; } }
-/* Navbar */
 
-    /* Titre principal */
-    .main-title {
-      text-align: center;
-      font-size: 2rem; /* Taille pour ordinateur */
-      margin: 20px 0 40px;
-      color: #ff4dbf;
-      font-weight: bold;
-      position: relative;
-      z-index: 10;
-      animation: fade-in 1s ease-in-out;
-    }
 
     /* Cercles décoratifs */
     .circle {
@@ -881,44 +869,7 @@ nav ul li a:hover {
       }
     }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 15px;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .main-title {
-        font-size: 1.5rem; /* Taille pour mobile */
-        padding: 0 10px;
-      }
-
-      .project-section {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 10px;
-      }
-
-      .project-image,
-      .project-details {
-        max-width: 90%; /* Utilisation de l'espace sur petit écran */
-      }
-
-      .photo-gallery {
-        gap: 10px;
-      }
-
-      .circle-small,
-      .circle-large {
-        display: none; /* Masquer les cercles sur mobile */
-      }
-    }
+    
   </style>
 </head>
 <body>
