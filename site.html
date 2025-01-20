@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projet Pictogramme - Renard</title>
+  <title>Projet Photoshop - Tour de l'IUT de Bobigny</title>
   <style>
 header {
     position: relative; /* Changer de fixed à relative */
@@ -206,7 +206,7 @@ body {
 
 .project-image {
   width: 100%;
-  max-width: 500px;
+  max-width: 350px;
   border-radius: 15px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
   margin-right: 30px;
@@ -226,9 +226,7 @@ body {
   margin-bottom: 15px;
   font-weight: bold;
 }
-.project-details strong {
-        color: #ff4dbf; /* Couleur pour le texte en gras */
-    }
+
 .project-details p {
   color: #f5c6ce;
   font-size: 1rem;
@@ -238,18 +236,23 @@ body {
 
 /* Galerie photos */
 .photo-gallery {
-    display: flex; /* Utilise Flexbox pour l'alignement */
-    justify-content: space-between; /* Espace entre les images */
-    align-items: center; /* Aligne les images au centre verticalement */
-    flex-wrap: wrap; /* Permet aux images de se repositionner sur plusieurs lignes si nécessaire */
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 30px 0;
+  opacity: 0;
+  animation: fade-in 2s 1s forwards;
+  margin-top: 100px;
+  flex-wrap: wrap;
 }
 
 .photo-gallery img {
-    max-width: 32%; /* Limite la largeur des images */
-    height: auto; /* Garde le ratio d'aspect des images */
-    border: 1px solid #000000; /* Optionnel : bordure autour des images */
-    box-sizing: border-box; /* Inclut la bordure dans le calcul de la largeur */
-    margin: 0; /* Assure qu'il n'y a pas de marge par défaut */
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-in-out;
 }
 
 .photo-gallery img:hover {
@@ -710,6 +713,9 @@ nav ul li a {
 nav ul li a:hover {
     color: #C83E6C;
 }
+.project-details strong {
+        color: #ff4dbf; /* Couleur pour le texte en gras */
+    }
   </style>
 </head>
 <body>
@@ -728,30 +734,22 @@ nav ul li a:hover {
     </ul>
   </nav>
 
-  <!-- Cercles décoratifs -->
-  <div class="circle circle-small"></div>
-  <div class="circle circle-large"></div>
-
   <!-- Titre principal -->
-  <h1 class="main-title">Urgence MultiServices : Site Web</h1>
+  <h1 class="main-title">Concevoir un site web avec une base de données</h1>
 
   <!-- Section Projet -->
   <div class="project-section">
-    <img class="project-image" src="téléchargement (23).png" alt="Pictogramme Renard">
+    <img class="project-image" src="site.png" alt="Intégration de la Tour de l'IUT">
     <div class="project-details">
-      <p><strong>Description :</strong> Création des maquettes et des wireframes interactifs pour un site de dépannage. Ce projet a pour objectif de faciliter l'accès aux services de dépannage en offrant une interface utilisateur intuitive et des informations claires pour les visiteurs.</p>
-      <p><strong>Contexte :</strong> Réalisé individuellement dans le cadre de la ressource <em>Référencement</em>, j'ai conçu l'architecture et le design du site en mettant l'accent sur l'expérience utilisateur et l'optimisation pour les moteurs de recherche. Les maquettes interactives permettent une meilleure visualisation du parcours utilisateur et préparent efficacement le développement du site.</p>
-      <p><strong>Production :</strong> Individuel</p>
-      <p><strong>Logiciels utilisé(s) :</strong> Figma</p>
-      <p><strong>Compétences :</strong> UX/UI design, création de wireframes, conception de maquettes interactives</p>
-      <p><strong>Veuillez voir mon projet :</strong> <a href="https://www.figma.com/design/uQ9UC3ae6s3WojOcnUsTgy/Exercice-R%C3%A9f%C3%A9rencement?node-id=0-1&t=oS1krRAy4E5fL397-1" target="_blank">Lien vers le projet</a></p>
-  </div>
-
-  <!-- Galerie Photos -->
-  <div class="photo-gallery">
-    <img src="dep2.jpg" alt="Illustration du pictogramme 1">
-    <img src="dep1.jpg" alt="Illustration du pictogramme 2">
-    <img src="dep3.jpg" alt="Illustration du pictogramme 3">
+        <p><strong>Description :</strong> Ce projet est un site web conçu pour permettre aux utilisateurs de s'inscrire, de se connecter, de poster des commentaires et de voir les commentaires d'autres utilisateurs en utilisant PHP, SQL, HTML, CSS, JavaScript et PDO.</p>
+        <p><strong>Contexte :</strong> Dans le cadre de mon projet de développement web, j'ai créé un site permettant une interaction utilisateur via l'inscription, la connexion, et le partage de commentaires sur des romans.</p>
+        <p><strong>Production :</strong>Individuel</p>
+        <p><strong>Logiciels utilisés :</strong> PHP, SQL, HTML, CSS, JavaScript, PDO</p>
+        <p><strong>Compétences :</strong> Développement web, gestion de bases de données, conception d'interface utilisateur.</p>
+        <p><strong>Veuillez voir mon site :</strong> <a href="http://projets.iut-bobigny.univ-paris13.fr/~aityahia/SAE203/index.php" target="_blank">Lien vers le projet</a></p>
+    </div>
+</div>
+    </div>
   </div>
 </body>
 </html>

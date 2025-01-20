@@ -14,6 +14,18 @@ header {
 }
 
 
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between; /* Sépare le logo à gauche et le menu à droite */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1C1C1C; /* Couleur de fond du menu */
+    position: fixed; /* Assurer que le menu reste fixe lors du scroll */
+    top: 0; /* Positionner le menu en haut */
+    z-index: 999; /* Assure que le menu reste au-dessus des autres éléments */
+}
+
 /* Conteneur du logo */
 .logo-container {
     display: flex;
@@ -57,6 +69,8 @@ nav ul li {
 nav ul li a {
     color: #F5C6CE;
     transition: color 0.3s ease;
+    font-weight: bold; /* Texte en gras */
+    text-decoration: none; /* Supprimer les lignes sous les liens */
 }
 
 nav ul li a:hover {
@@ -239,6 +253,7 @@ body {
 @media (max-width: 767px) { .container { padding: 10px; } .row { flex-direction: column; /* Empile les colonnes sur mobile */ } .col { flex: none; width: 100%; /* Prend toute la largeur */ padding: 5px; } .hero-text h1 { font-size: 2rem; /* Réduit la taille du texte sur mobile */ } .hero-text h2 { font-size: 1.5rem; } .hero-text p { font-size: 0.9rem; } .hero-buttons .btn { width: 100%; /* Les boutons prennent toute la largeur */ font-size: 14px; } .logo { width: 60px; /* Réduit la taille du logo sur mobile */ } .about-image img { width: 100%; /* L'image prend toute la largeur */ margin-left: 0; } nav { flex-direction: column; /* Navigation en colonne sur mobile */ } nav ul { flex-direction: column; /* Liste verticale des liens de navigation */ gap: 10px; } .project-grid { grid-template-columns: 1fr; /* 1 projet par ligne sur mobile */ } .tools { flex-direction: column; /* Les outils en colonne sur mobile */ align-items: center; } .tool { width: 100%; /* Les outils prennent toute la largeur */ margin-bottom: 10px; } }
 /* Navbar */
 nav {
+    
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -269,7 +284,6 @@ nav ul li a {
 nav ul li a:hover {
     color: #C83E6C;
 }
-
 /* Section À propos de moi */
 .about-me {
     padding: 50px 20px;
@@ -341,6 +355,8 @@ body {
   
   /* Styles spécifiques aux grands écrans */
   @media (min-width: 992px) {
+    nav {
+        position: fixed;}
     .desktop-only {
       display: block;
     }
@@ -559,54 +575,28 @@ nav ul li a:hover {
 }
   
   
-  /* Conteneur des boutons de filtrage */
-.project-filters {
+  .project-filters {
     display: flex;
     justify-content: center; /* Centre les boutons */
     gap: 20px; /* Espacement entre les boutons */
     margin: 20px auto; /* Centrer par rapport à la section */
     width: fit-content; /* Garde les boutons au plus près les uns des autres */
 }
-
-/* Style de base des boutons de filtrage */
+/* Boutons de filtrage */
 .filter-btn {
-    background-color: #C83E6C; /* Couleur principale des boutons */
-    border: none;
-    color: white;
+    background-color: #f0f0f0; /* Couleur de fond des boutons */
+    border: 2px solid #ccc; /* Bordure légère */
     padding: 10px 20px;
+    cursor: pointer;
     font-size: 16px;
     text-transform: uppercase;
-    cursor: pointer;
-    border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
-    font-weight: bold;
 }
 
-/* Effet de survol sur les boutons de filtrage */
 .filter-btn:hover {
-    background-color: #F5C6CE; /* Couleur au survol */
-    color: #C83E6C; /* Texte en couleur secondaire */
+    background-color: #333; /* Changement de couleur au survol */
+    color: #fff; /* Changement de couleur du texte */
 }
-
-/* Boutons de filtrage à l'état actif */
-.filter-btn.active {
-    background-color: #F5C6CE;
-    color: #C83E6C; /* Inversement : texte couleur secondaire, fond couleur primaire */
-}
-
-/* Responsivité pour les petits écrans */
-@media (max-width: 767px) {
-    .project-filters {
-        flex-direction: column; /* Aligne les boutons en colonne sur mobile */
-        align-items: center; /* Centre les boutons */
-    }
-
-    .filter-btn {
-        width: 100%; /* Les boutons prennent toute la largeur sur mobile */
-        font-size: 14px;
-    }
-}
-
 
 /* Grille des projets */
 .project-grid {

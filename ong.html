@@ -3,235 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ONG</title>
+  <title>ong</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
   <style>
     /* Style global */
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #121212; /* Noir */
-      color: #ffffff; /* Texte en blanc */
-      overflow-x: hidden;
-    }
-
-    /* Navbar */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
-      background-color: #1C1C1C;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav .logo-container {
-      display: flex;
-      align-items: center;
-    }
-
-    .logo {
-      width: 80px;
-      height: auto;
-      border-radius: 10px;
-      transition: transform 0.3s ease;
-    }
-
-    nav .logo:hover {
-      transform: scale(1.1);
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-    }
-
-    nav ul li a {
-      color: #F5C6CE;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      color: #C83E6C;
-    }
-
-    /* Titre principal */
-    .main-title {
-      text-align: center;
-      font-size: 2rem; /* Taille pour ordinateur */
-      margin: 20px 0 40px;
-      color: #ff4dbf;
-      font-weight: bold;
-      position: relative;
-      z-index: 10;
-      animation: fade-in 1s ease-in-out;
-    }
-
-    /* Cercles décoratifs */
-    .circle {
-      position: absolute;
-      border-radius: 50%;
-      opacity: 0.3;
-      z-index: 1;
-    }
-
-    .circle-small {
-      width: 150px;
-      height: 150px;
-      background: linear-gradient(45deg, #ff4dbf, #ffd700);
-      top: 10%;
-      left: 20%;
-      animation: move-circle 3s infinite alternate ease-in-out;
-    }
-
-    .circle-large {
-      width: 200px;
-      height: 200px;
-      background: linear-gradient(45deg, #ff4dbf, #4d79ff);
-      bottom: -50px;
-      right: -50px;
-      animation: move-circle-large 3s infinite alternate ease-in-out;
-    }
-
-    /* Section projet */
-    .project-section {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap; /* Permet à tous les éléments de passer en colonne si nécessaire */
-      padding: 0 5%;
-      position: relative;
-      z-index: 5;
-      margin-bottom: 40px;
-      animation: fade-in 1s ease-in-out;
-    }
-
-    .project-image {
-      width: 100%;
-      max-width: 500px; /* Taille max sur grand écran */
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-      margin: 20px 0;
-    }
-
-    .project-details {
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-      max-width: 500px;
-      margin: 0 10px;
-      text-align: left;
-    }
-
-    .project-details h2 {
-      color: #ff4dbf;
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-      font-weight: bold;
-    }
-
-    .project-details p {
-      color: #f5c6ce;
-      font-size: 1rem;
-      margin-bottom: 10px;
-      line-height: 1.6;
-    }
-
-    /* Galerie photos */
-    .photo-gallery {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 20px;
-      margin: 30px 0;
-      opacity: 0;
-      animation: fade-in 2s 1s forwards;
-    }
-
-    .photo-gallery img {
-      width: 100%;
-      max-width: 250px;
-      height: auto; /* Ajustement pour conserver le ratio */
-      object-fit: contain;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .photo-gallery img:hover {
-      transform: scale(1.1);
-    }
-
-    /* Animations */
-    @keyframes fade-in {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
-    }
-
-    @keyframes move-circle {
-      to {
-        transform: translate(30px, -30px) rotate(15deg);
-      }
-    }
-
-    @keyframes move-circle-large {
-      to {
-        transform: translate(-50px, 50px) rotate(-20deg);
-      }
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 15px;
-      }
-
-      nav ul {
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .main-title {
-        font-size: 1.5rem; /* Taille pour mobile */
-        padding: 0 10px;
-      }
-
-      .project-section {
-        flex-direction: column;
-        align-items: center;
-        padding: 20px 10px;
-      }
-
-      .project-image,
-      .project-details {
-        max-width: 90%; /* Utilisation de l'espace sur petit écran */
-      }
-
-      .photo-gallery {
-        gap: 10px;
-      }
-
-      .circle-small,
-      .circle-large {
-        display: none; /* Masquer les cercles sur mobile */
-      }
-    }
-    /* General Reset */
-* {
+    * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -502,23 +280,247 @@ nav ul li a:hover {
     color: #C83E6C;
 }
 
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background-color: #121212; /* Noir */
+      color: #ffffff; /* Texte en blanc */
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background-color: #1C1C1C;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo-container {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      width: 80px;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+    }
+
+    nav .logo:hover {
+      transform: scale(1.1);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: #F5C6CE;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li a:hover {
+      color: #C83E6C;
+    }
+
+    /* Titre principal */
+    .main-title {
+      text-align: center;
+      font-size: 2rem; /* Taille pour ordinateur */
+      margin: 20px 0 40px;
+      color: #ff4dbf;
+      font-weight: bold;
+      position: relative;
+      z-index: 10;
+      animation: fade-in 1s ease-in-out;
+    }
+
+    /* Cercles décoratifs */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.3;
+      z-index: 1;
+    }
+
+    .circle-small {
+      width: 150px;
+      height: 150px;
+      background: linear-gradient(45deg, #ff4dbf, #ffd700);
+      top: 10%;
+      left: 20%;
+      animation: move-circle 3s infinite alternate ease-in-out;
+    }
+
+    .circle-large {
+      width: 200px;
+      height: 200px;
+      background: linear-gradient(45deg, #ff4dbf, #4d79ff);
+      bottom: -50px;
+      right: -50px;
+      animation: move-circle-large 3s infinite alternate ease-in-out;
+    }
+
+    /* Section projet */
+    .project-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: auto;
+      flex-wrap: wrap; /* Permet à tous les éléments de passer en colonne si nécessaire */
+      padding: 0 5%;
+      position: relative;
+      z-index: 5;
+      margin-bottom: 40px;
+      animation: fade-in 1s ease-in-out;
+    }
+
+    .project-image {
+      width: 100%;
+      max-width: 500px; /* Taille max sur grand écran */
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      margin: 20px 0;
+    }
+
+    .project-details {
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+      max-width: 500px;
+      margin: 0 10px;
+      text-align: left;
+    }
+
+    .project-details h2 {
+      color: #ff4dbf;
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+    .project-details strong {
+        color: #ff4dbf; /* Couleur pour le texte en gras */
+    }
+    .project-details p {
+      color: #f5c6ce;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    /* Galerie photos */
+    .photo-gallery {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 30px 0;
+      opacity: 0;
+      animation: fade-in 2s 1s forwards;
+    }
+
+    .photo-gallery img {
+      width: 100%;
+      max-width: 250px;
+      height: 250px;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .photo-gallery img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Animations */
+    @keyframes fade-in {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes move-circle {
+      to {
+        transform: translate(30px, -30px) rotate(15deg);
+      }
+    }
+
+    @keyframes move-circle-large {
+      to {
+        transform: translate(-50px, 50px) rotate(-20deg);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
+      }
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .main-title {
+        font-size: 1.5rem; /* Taille pour mobile */
+        padding: 0 10px;
+      }
+
+      .project-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+      }
+
+      .project-image,
+      .project-details {
+        max-width: 90%; /* Utilisation de l'espace sur petit écran */
+      }
+
+      .photo-gallery {
+        gap: 10px;
+      }
+
+      .circle-small,
+      .circle-large {
+        display: none; /* Masquer les cercles sur mobile */
+      }
+    }
   </style>
 </head>
 <body>
   <!-- Navbar -->
   <nav>
     <div class="logo-container">
-        <a href="index.html" class="logo-link">
-            <img src="image-removebg-preview (1).png" alt="Logo de ton site" class="logo">
-        </a>
+      <a href="index.html" class="logo-link">
+        <img src="image-removebg-preview (1).png" alt="Logo de ton site" class="logo">
+      </a>
     </div>
     <ul>
-        <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#apropos">À propos</a></li>
-<li><a href="#portfolio">Portfolio</a></li>
-<li><a href="#contact">Contact</a></li>
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-</nav>
+  </nav>
 
   <!-- Cercles décoratifs -->
   <div class="circle circle-small"></div>
@@ -531,12 +533,13 @@ nav ul li a:hover {
   <div class="project-section">
     <img class="project-image" src="téléchargement (22).png" alt="Pictogramme Renard">
     <div class="project-details">
-        <p><strong>Description :</strong> Création des wireframes et des maquettes interactives du site <em>Briser le Silence</em>, une ONG dédiée à la lutte contre la violence domestique. Ce projet vise à offrir une navigation intuitive et des visuels percutants pour sensibiliser et accompagner les victimes.</p>
-        <p><strong>Contexte :</strong> En collaboration avec une collègue, nous avons conçu l'architecture et le design du site en mettant l'accent sur l'accessibilité et l'engagement des utilisateurs. Les maquettes interactives permettent une meilleure visualisation et une préparation optimisée pour le développement.</p>
-        <p><strong>Production :</strong> En binôme</p>
+      <p><strong>Description :</strong> Création des wireframes et des maquettes interactives du site dans le cadre de la SAE 302. <em>Briser le Silence</em>, une ONG dédiée à la lutte contre la violence domestique. Ce projet vise à offrir une navigation intuitive et des visuels percutants pour sensibiliser et accompagner les victimes.</p>
+      <p><strong>Contexte :</strong> En collaboration avec une collègue , nous avons conçu l'architecture et le design du site en mettant l'accent sur l'accessibilité et l'engagement des utilisateurs. Les maquettes interactives permettent une meilleure visualisation et une préparation optimisée pour le développement.</p>
+      <p><strong>Production :</strong> En binôme</p>
         <p><strong>Logiciels utilisé(s) :</strong> Figma</p>
         <p><strong>Compétences :</strong> UX/UI design, création de wireframes, conception de maquettes interactives</p>
-    </div>
+        <p><strong>Veuillez voir mon projet! :</strong> <a href="https://www.figma.com/design/Ag6CfX8YxiM8qxzz4leBvy/Wireframes%2FMaquettes?node-id=35-2&t=XKypXXeghtYQM7hw-1" target="_blank">Lien vers le projet</a></p>
+      </div>
   </div>
 
   <!-- Galerie Photos -->
