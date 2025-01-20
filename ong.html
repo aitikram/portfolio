@@ -31,16 +31,16 @@
       display: flex;
       align-items: center;
     }
+
     .logo {
-      width: 80px; /* Largeur du logo */
-      height: auto; /* Conserver les proportions */
-      border-radius: 10px; /* Optionnel : coins arrondis */
-      transition: transform 0.3s ease; /* Animation de survol */
-      margin-left: 50px;
+      width: 80px;
+      height: auto;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
     }
 
     nav .logo:hover {
-      transform: scale(1.1); /* Agrandir légèrement le logo au survol */
+      transform: scale(1.1);
     }
 
     nav ul {
@@ -60,18 +60,16 @@
     }
 
     /* Titre principal */
-/* Titre principal */
-.main-title {
-  text-align: center;
-  font-size: 2rem; /* Taille réduite du titre */
-  margin: 20px 0 40px; /* Espacement supérieur et inférieur (20px en haut, 40px en bas) */
-  color: #ff4dbf;
-  font-weight: bold;
-  position: relative;
-  z-index: 10;
-  animation: fade-in 1s ease-in-out;
-}
-
+    .main-title {
+      text-align: center;
+      font-size: 2rem; /* Taille pour ordinateur */
+      margin: 20px 0 40px;
+      color: #ff4dbf;
+      font-weight: bold;
+      position: relative;
+      z-index: 10;
+      animation: fade-in 1s ease-in-out;
+    }
 
     /* Cercles décoratifs */
     .circle {
@@ -104,49 +102,42 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 60vh;
+      height: auto;
+      flex-wrap: wrap; /* Permet à tous les éléments de passer en colonne si nécessaire */
       padding: 0 5%;
       position: relative;
       z-index: 5;
-      margin-bottom: 40px; /* Espace en bas */
-      animation: fade-in 1s ease-in-out; /* Animation de la section */
+      margin-bottom: 40px;
+      animation: fade-in 1s ease-in-out;
     }
 
-    /* Bloc image */
     .project-image {
       width: 100%;
-      max-width: 900px; /* Limite de la largeur de l'image */
+      max-width: 500px; /* Taille max sur grand écran */
       border-radius: 15px;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
-      margin: 0 20px; /* Espacement horizontal */
-      margin-bottom: 20px;
+      margin: 20px 0;
     }
 
-    /* Bloc détails */
     .project-details {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
-  margin: 0 50px; /* Espacement horizontal */
-  animation: cinema-curtains-gallery 1s ease-in-out; /* Animation rideau */
-  max-height: 250px; /* Hauteur maximale de la boîte */
-  overflow-y: auto; /* Activer le défilement vertical si le contenu dépasse */
-}
+      background-color: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+      max-width: 500px;
+      margin: 0 10px;
+      text-align: left;
+    }
 
     .project-details h2 {
       color: #ff4dbf;
       font-size: 1.5rem;
       margin-bottom: 15px;
-      font-weight: bold; /* Texte en gras */
-    }
-    .project-details p strong {
-      color: #ff4dbf; /* Couleur rose vif pour les titres des sections */
-      font-weight: bold; /* Mise en gras des titres */
+      font-weight: bold;
     }
 
     .project-details p {
-      color: #f5c6ce; /* Couleur claire pour le texte des détails */
+      color: #f5c6ce;
       font-size: 1rem;
       margin-bottom: 10px;
       line-height: 1.6;
@@ -156,27 +147,26 @@
     .photo-gallery {
       display: flex;
       justify-content: center;
+      flex-wrap: wrap;
       gap: 20px;
       margin: 30px 0;
       opacity: 0;
       animation: fade-in 2s 1s forwards;
-      margin-top: 10px;
     }
 
     .photo-gallery img {
-  width: 300px;
-  height: 300px;
-  object-fit: contain; /* Affiche toute l'image avec des bordures transparentes si nécessaire */
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-  transition: transform 0.3s ease-in-out;
-}
-
-    .photo-gallery img:hover {
-      transform: scale(1.1); /* Légère agrandissement au survol */
+      width: 100%;
+      max-width: 250px;
+      height: 250px;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
       transition: transform 0.3s ease-in-out;
     }
 
+    .photo-gallery img:hover {
+      transform: scale(1.1);
+    }
 
     /* Animations */
     @keyframes fade-in {
@@ -200,38 +190,49 @@
       }
     }
 
-    /* Animation "rideaux de cinéma" pour la galerie */
-    @keyframes cinema-curtains-gallery {
-      0% {
-        transform: scaleY(0);
-        opacity: 0.5;
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 15px;
       }
-      50% {
-        transform: scaleY(1);
-        opacity: 0.7;
+
+      nav ul {
+        flex-direction: column;
+        gap: 10px;
       }
-      100% {
-        transform: scaleY(1);
-        opacity: 1;
+
+      .main-title {
+        font-size: 1.5rem; /* Taille pour mobile */
+        padding: 0 10px;
+      }
+
+      .project-section {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 10px;
+      }
+
+      .project-image,
+      .project-details {
+        max-width: 90%; /* Utilisation de l'espace sur petit écran */
+      }
+
+      .photo-gallery {
+        gap: 10px;
+      }
+
+      .circle-small,
+      .circle-large {
+        display: none; /* Masquer les cercles sur mobile */
       }
     }
   </style>
 </head>
 <body>
   <!-- Navbar -->
-  <nav>
-    <div class="logo-container">
-      <a href="index.html" class="logo-link">
-        <img src="image-removebg-preview (1).png" alt="Logo de ton site" class="logo">
-      </a>
-    </div>
-    <ul>
-      <li><a href="#accueil">Accueil</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#apropos">À propos</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+
 
   <!-- Cercles décoratifs -->
   <div class="circle circle-small"></div>
